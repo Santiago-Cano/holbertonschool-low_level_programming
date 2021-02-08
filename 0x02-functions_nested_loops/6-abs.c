@@ -5,10 +5,10 @@
  * Return: 0
  */
 
-int _abs(int);
+int _abs(int n)
 {
-	if (number < 0)
-		return (-number);
+	if (n < 0)
+		return (-n);
 	else
-		return (number);
+		return (n);
 }
