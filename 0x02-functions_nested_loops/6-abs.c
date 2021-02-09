@@ -3,6 +3,7 @@
 /**
  * _abs - print absolute value of an integer
  * Return: 0
+ * @n: external input
  */
 
 int _abs(int n)

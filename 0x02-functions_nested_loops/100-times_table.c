@@ -3,6 +3,7 @@
 /**
  * print_times_table - print n times table
  * Return: 0
+ * @n: external input
  */
 
 void print_times_table(int n)

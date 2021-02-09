@@ -3,6 +3,7 @@
 /**
  * _isalpha - check for alphabetic character
  * Return: 1 or 0
+ * @c: external input
  */
 
 int _isalpha(int c);
