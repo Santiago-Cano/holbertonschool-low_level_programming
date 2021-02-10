@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - print first 50 fibonacci numbers
+ * main - print first 98 fibonacci numbers
  * Return: 0
  */
 
@@ -9,16 +9,32 @@ int main(void)
 {
 	unsigned long num1 = 1;
 	unsigned long num2 = 2;
-	int counter;
-	long num1, num11, num2, num22;
+	int counter, extra;
+	unsigned long head1, head2, tail1, tail2;
 
-	for (counter = 0; counter <= 48; counter++)
+	for (counter = 0; counter <= 41; counter++)
 	{
-		printf("%ld, %ld", num1, num2);
+		printf("%lu, %lu, ", num1, num2);
 		num1 += num2;
 		num2 += num1;
-		if (counter != 48)
+	}
+	head1 = (num2 / 10000000000);
+	head2 = (num2 % 10000000000);
+	tail1 = (num1 / 10000000000);
+	tail2 = (num1 % 10000000000);
+	for (; counter <= 54; counter++)
+	{
+		extra = (head2 + tail2) / 10000000000;
+		num2 = (head2 + tail2) - (extra * 10000000000);
+		num1 = (head1 + tail1 + extra);
+		printf("%lu%lu secondloop", num1, num2);
+		if (counter != 54)
 			printf(", ");
+
+		head1 = tail1;
+		head2 = tail2;
+		tail1 = num1;
+		tail2 = num2;
 	}
 	printf("\n");
 	return (0);
