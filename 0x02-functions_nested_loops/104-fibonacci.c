@@ -29,7 +29,7 @@ int main(void)
 		num2 = (head2 + tail2) - (extra * 10000000000);
 		num1 = (head1 + tail1 + extra);
 		printf("%lu%lu", num1, num2);
-		if (counter != 54)
+		if (counter != 50)
 			printf(", ");
 
 		tail1 = head1;
