@@ -28,14 +28,14 @@ int main(void)
 		extra = (head2 + tail2) / 10000000000;
 		num2 = (head2 + tail2) - (extra * 10000000000);
 		num1 = (head1 + tail1 + extra);
-		printf("%lu%lu secondloop", num1, num2);
+		printf("%lu%lu", num1, num2);
 		if (counter != 54)
 			printf(", ");
 
-		head1 = tail1;
-		head2 = tail2;
-		tail1 = num1;
-		tail2 = num2;
+		tail1 = head1;
+		tail2 = head2;
+		head1 = num1;
+		head2 = num2;
 	}
 	printf("\n");
 	return (0);
