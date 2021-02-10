@@ -22,6 +22,7 @@ int main(void)
 	head2 = (num2 % 10000000000);
 	tail1 = (num1 / 10000000000);
 	tail2 = (num1 % 10000000000);
+	printf("%lu, %lu, ", num1, num2);
 	for (; counter <= 54; counter++)
 	{
 		extra = (head2 + tail2) / 10000000000;
