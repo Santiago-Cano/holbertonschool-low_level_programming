@@ -9,8 +9,8 @@ int main(void)
 {
 	unsigned long num1 = 1;
 	unsigned long num2 = 2;
-	int counter, extra;
-	unsigned long head1, head2, tail1, tail2;
+	int counter;
+	unsigned long head1, head2, tail1, tail2, extra;
 
 	for (counter = 0; counter <= 43; counter++)
 	{
