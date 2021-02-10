@@ -12,7 +12,7 @@ int main(void)
 	int counter, extra;
 	unsigned long head1, head2, tail1, tail2;
 
-	for (counter = 0; counter <= 41; counter++)
+	for (counter = 0; counter <= 43; counter++)
 	{
 		printf("%lu, %lu, ", num1, num2);
 		num1 += num2;
@@ -23,7 +23,7 @@ int main(void)
 	tail1 = (num1 / 10000000000);
 	tail2 = (num1 % 10000000000);
 	printf("%lu, %lu, ", num1, num2);
-	for (; counter <= 54; counter++)
+	for (; counter <= 50; counter++)
 	{
 		extra = (head2 + tail2) / 10000000000;
 		num2 = (head2 + tail2) - (extra * 10000000000);
