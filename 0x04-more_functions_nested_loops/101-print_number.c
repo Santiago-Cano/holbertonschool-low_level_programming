@@ -24,18 +24,21 @@ int power(int a)
  */
 void print_number(int n)
 {
-	unsigned int digits = 0;
-	unsigned int number, count;
+	int digits = 0;
+	int number, count;
 	unsigned int divide = 1;
+	unsigned int num; /* num is the external input, number is the numbers to be printed*/
 
 	if (n == 0)
 		_putchar('0');
 	if (n < 0)
 	{
-		n *= -1;
+		num = -n;
 		_putchar('-');
 	}
-	while ((n / divide) != 0) /*get total number of digits from the integer*/
+	else
+		num = n;
+	while ((num / divide) != 0) /*get total number of digits from the integer*/
 	{
 		divide *= 10;
 		digits++;
@@ -44,11 +47,13 @@ void print_number(int n)
 		digits = 10;
 	for (count = 1; count <= digits; count++)
 	{
-		number = n / power(digits - count); /* get first x digits from number */
+		number = num / power(digits - count); /* get first x digits from number */
 		if ((number % 10) != 0)
 			number = number % 10; /* get last digit */
 		else
 			number = 0;
+		if (number < 0)
+			number *= -1;
 		_putchar('0' + number);
 	}
 }
