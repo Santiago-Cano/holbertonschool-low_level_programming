@@ -7,8 +7,8 @@
 
 int main(void)
 {
-	unsigned long number = 612852475143;
-	unsigned long divide = 2;
+	unsigned long number = 1231952;
+	int divide = 2;
 	int largest = 0;
 
 	while (number != 1)
@@ -16,12 +16,10 @@ int main(void)
 		if ((number % divide) != 0)
 			divide++;
 		else
-		{
 			number /= divide;
-			if (number != 1)
-				largest = divide;
-		}
+		if (number != 1)
+			largest = divide;
 	}
-	printf("%lu\n", largest);
+	printf("%d\n", largest);
 	return (0);
 }
