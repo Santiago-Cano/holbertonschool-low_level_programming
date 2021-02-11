@@ -30,6 +30,11 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar('0');
+	if (n < 0)
+	{
+		n *= -1;
+		_putchar('-');
+	}
 	while ((n / divide) != 0) /*get total number of digits from the integer*/
 	{
 		divide *= 10;
@@ -37,11 +42,6 @@ void print_number(int n)
 	}
 	if (digits > 10)
 		digits = 10;
-	if (n < 0)
-	{
-		n *= -1;
-		_putchar('-');
-	}
 	for (count = 1; count <= digits; count++)
 	{
 		number = n / power(digits - count); /* get first x digits from number */
