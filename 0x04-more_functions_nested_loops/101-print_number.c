@@ -8,8 +8,8 @@
 
 int power(int a)
 {
-	int exponent;
-	int result;
+	unsigned int exponent;
+	unsigned int result;
 
 	result = 1;
 	for (exponent = a; exponent > 0; exponent--)
@@ -25,10 +25,9 @@ int power(int a)
  */
 void print_number(int n)
 {
-	int digits = 0;
-	int number;
-	int divide = 1;
-	int count;
+	unsigned int digits = 0;
+	unsigned int number, count;
+	unsigned int divide = 1;
 
 	if (n == 0)
 		_putchar('0');
