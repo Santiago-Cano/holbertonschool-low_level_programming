@@ -8,17 +8,18 @@
 
 void print_triangle(int size)
 {
-	int triangle;
+	int hashtag;
 	int spaces;
+	int repeat;
 
-	for (spaces = (size - 1); spaces >= 0; spaces--)
+	for (repeat = 1; repeat <= size; repeat++)
 	{
-		_putchar(' ');
+		for (spaces = (size - repeat); spaces > 0; spaces--)
+			_putchar(' ');
+		for (hashtag = (size + repeat); hashtag > size; hashtag--)
+			_putchar('#');
+		_putchar('\n');
 	}
-		if (!(slash >= n))
-			for (spaces = 1; spaces <= slash; spaces++)
-				_putchar(' ');
-	}
-	if (!(n > 0))
+	if (size < 1)
 		_putchar('\n');
 }
