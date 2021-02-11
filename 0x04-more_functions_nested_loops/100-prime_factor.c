@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	unsigned long number = 1231952;
+	unsigned long number = 612852475143;
 	int divide = 2;
 	int largest = 0;
 
