@@ -8,11 +8,10 @@
 
 int power(int a)
 {
-	unsigned int exponent;
 	unsigned int result;
 
 	result = 1;
-	for (exponent = a; exponent > 0; exponent--)
+	for (; a > 0; a--)
 	{
 		result = result * 10;
 	}
