@@ -48,7 +48,7 @@ void print_number(int n)
 	{
 		number = n / power(digits - count); /* get first x digits from number */
 		if ((number % 10) != 0)
-			number = number % power((digits - count) + 1); /* get rightmost number*/
+			number = number % 10; /* get rightmost number*/
 		else
 			number = 0;
 		_putchar('0' + number);
