@@ -32,9 +32,11 @@ void print_number(int n)
 		_putchar('0');
 	while ((n / divide) != 0) /*get total number of digits from the integer*/
 	{
-		digits++;
 		divide *= 10;
+		digits++;
 	}
+	if (digits > 10)
+		digits = 10;
 	if (n < 0)
 	{
 		n *= -1;
@@ -44,7 +46,7 @@ void print_number(int n)
 	{
 		number = n / power(digits - count); /* get first x digits from number */
 		if ((number % 10) != 0)
-			number = number % 10; /* get rightmost number*/
+			number = number % 10; /* get last digit */
 		else
 			number = 0;
 		_putchar('0' + number);
