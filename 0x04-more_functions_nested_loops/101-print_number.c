@@ -27,7 +27,8 @@ void print_number(int n)
 	int digits = 0;
 	int number, count;
 	unsigned int divide = 1;
-	unsigned int num; /* num is the external input, number is the numbers to be printed*/
+	unsigned int num;
+/* num is the external input, number is the numbers to be printed*/
 
 	if (n == 0)
 		_putchar('0');
