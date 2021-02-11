@@ -17,8 +17,8 @@ void more_numbers(void)
 			for (i = '0'; i <= '9'; i++)
 			{
 				if (!(ten == '0'))
-				    if (!(ten == '1' && i > '4'))
-					    _putchar(ten);
+					if (!(ten == '1' && i > '4'))
+						_putchar(ten);
 				if (!(ten == '1' && i > '4'))
 					_putchar(i);
 			}
