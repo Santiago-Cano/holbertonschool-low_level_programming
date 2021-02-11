@@ -8,7 +8,8 @@
 int main(void)
 {
 	int hundred;
-	for(hundred = 1; hundred <= 100; hundred++)
+
+	for (hundred = 1; hundred <= 100; hundred++)
 	{
 		if ((hundred % 3) == 0)
 			printf("Fizz");
