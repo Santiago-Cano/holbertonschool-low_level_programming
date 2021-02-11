@@ -25,13 +25,11 @@ int power(int a)
  */
 void print_number(int n)
 {
-	int digits;
+	int digits = 0;
 	int number;
-	int divide;
+	int divide = 1;
 	int count;
 
-	divide = 1;
-	digits = 0;
 	if (n == 0)
 		_putchar('0');
 	while ((n / divide) != 0) /*get total number of digits from the integer*/
