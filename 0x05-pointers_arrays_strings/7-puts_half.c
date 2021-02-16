@@ -11,6 +11,8 @@ void puts_half(char *str)
 	int counter = 0;
 	int last, temp;
 
+	if (*str == '\0')
+		return ();
 	while (*str != '\0')
 	{
 		counter++;
