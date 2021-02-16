@@ -25,7 +25,7 @@ void puts_half(char *str)
 		temp--;
 	}
 	if ((counter % 2) != 0) /* make sure counter is even */
-		counter -= 1;
+		counter += 1;
 	for (last = counter / 2; last <= counter; last++)
 	{
 		if (*str != '\0')
