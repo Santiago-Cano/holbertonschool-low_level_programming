@@ -12,8 +12,10 @@ void puts_half(char *str)
 	int last, temp;
 
 	if (*str == '\0')
+	{
 		_putchar('\n');
 		return;
+	}
 	while (*str != '\0')
 	{
 		counter++;
