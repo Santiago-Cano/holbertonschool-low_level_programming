@@ -24,6 +24,8 @@ void puts_half(char *str)
 		str--;
 		temp--;
 	}
+	if ((counter % 2) != 0) /* account for odd input */
+		counter += 1;
 	for (last = counter / 2; last < counter; last++)
 	{
 		if (str[last] != 0)
