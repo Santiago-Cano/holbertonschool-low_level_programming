@@ -1,0 +1,27 @@
+#include "holberton.h"
+
+/**
+ * _strncat - concatenate two strings, only using n bytes from src
+ * @dest: dest string
+ * @src: src string
+ * @n: number of bytes to append
+ * Return: dest
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int end = 0;
+
+	while (*dest != '\0')
+		dest++;
+	for (; n > 0; n--)
+	{
+		*dest = *src;
+		dest++, src++;
+		if (end == 1)
+			break;
+		if (*src == '\0' && n != 0)
+			end = 1;
+	}
+	return dest;
+}
