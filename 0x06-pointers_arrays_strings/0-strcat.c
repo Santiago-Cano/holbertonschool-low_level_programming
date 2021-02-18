@@ -4,7 +4,7 @@
  * _strcat - concatenate two strings
  * @dest: dest string
  * @src: src string
- * Return: both strings
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)
@@ -21,5 +21,5 @@ char *_strcat(char *dest, char *src)
 		counter2++;
 	}
 	dest[counter2] = '\0';
-	return dest;
+	return (dest);
 }
