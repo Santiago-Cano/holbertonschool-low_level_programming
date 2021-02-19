@@ -20,7 +20,6 @@ int power(int a)
 /**
  * print_number - print an integer
  * @n: external input
- * Return: nothing
  */
 void print_number(int n)
 {
