@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _strncpy - copy n bytes from string onto dest
  * @dest: dest string
@@ -10,19 +9,13 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
+	int counter;
 
-	int de = 0;
-	int sr = 0;
-	int end = 0;
+	/* count to n, and stop if src reaches its end */
+	for (counter = 0; counter < n && src[counter] != '\0'; counter++)
+		dest[counter] = src[counter];
 
-	for (; n > 0; n--)
-	{
-		dest[de] = src[sr];
-		de++, sr++;
-		if (end == 1) /*break string -after- having set null value*/
-			break;
-		if (src[sr] == '\0' && n != 0)
-			end = 1;
-	}
+	for (; counter < n; counter++)
+		dest[counter] = '\0';
 	return (dest);
 }
