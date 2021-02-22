@@ -16,7 +16,7 @@ void print_diagsums(int *a, int size)
 		sum += a[(vertical * size) + vertical];
 	printf("%li, ", sum);
 	sum = 0;
-	for (vertical = 1; vertical < size; vertical++)
+	for (vertical = 1; vertical <= size; vertical++)
 		sum += a[(vertical * size) - vertical];
 	printf("%li\n", sum);
 }
