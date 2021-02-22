@@ -10,19 +10,19 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int nee = 0;
-	int match;
+	int match = 0;
 
 	for (; *haystack != '\0'; haystack++)
 	{
 		if (*haystack == *needle)
 		{
-			for (nee = 0; needle[nee] != '\0' && != haystack[nee] '\0' ; nee++)
+			for (nee = 0; needle[nee] != '\0'; nee++)
 				if ((!(haystack[nee] == needle[nee])) ||
-					haystack[nee] == '\0')
+				    haystack[nee] != '\0')
 				{
 					match = 0;
 					break;
-				}
+ 				}
 				else
 					match = 1;
 		}
