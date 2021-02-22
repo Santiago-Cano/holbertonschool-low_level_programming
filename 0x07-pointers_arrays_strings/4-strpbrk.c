@@ -4,13 +4,13 @@
  * _strpbrk - searches an array for a byte that matches any in accept
  * @s: input array
  * @accept: set of bytes to compare
- * Return: s
+ * Return: s or null if theres not a match
  */
 
 char *_strpbrk(char *s, char *accept)
 {
 	int acc;
-	int nomatch;
+	int match;
 
 	for (; *s != '\0'; s++)
 	{
@@ -18,12 +18,14 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == accept[acc])
 			{
-				nomatch = 0;
+				match = 1;
 				break;
 			}
 		}
-		if (nomatch == 0)
+		if (match == 1)
 			break;
 	}
+	if (match != 1)
+		return ('\0');
 	return (s);
 }
