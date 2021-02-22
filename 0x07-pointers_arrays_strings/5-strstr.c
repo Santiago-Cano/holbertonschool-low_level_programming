@@ -10,14 +10,14 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int nee = 0;
-	int match;
+	int match, hay;
 
-	for (; *haystack != '\0'; haystack++)
+	for (hay = 0; haystack[hay] != '\0'; hay++)
 	{
-		if (*haystack == *needle)
+		if (haystack[hay] == *needle)
 		{
 			for (nee = 0; needle[nee] != '\0'; nee++)
-				if (!(haystack[nee] == needle[nee]))
+				if (!(haystack[hay + nee] == needle[nee]))
 				{
 					match = 0;
 					break;
@@ -28,9 +28,7 @@ char *_strstr(char *haystack, char *needle)
 		if (match == 1)
 			break;
 	}
-	if (needle == '\0')
-		return (haystack);
 	if (match == 0)
 		return ('\0');
-	return (haystack);
+	return (haystack + hay);
 }
