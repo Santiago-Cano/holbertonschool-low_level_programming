@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdlib.h>
 /**
  * _strstr - locate first ocurrence of full match to needle in haystack
  * @haystack: Input array
