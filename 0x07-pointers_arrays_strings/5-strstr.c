@@ -9,7 +9,8 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int nee, match;
+	int nee = 0;
+	int match;
 
 	for (; *haystack != '\0'; haystack++)
 	{
@@ -25,10 +26,9 @@ char *_strstr(char *haystack, char *needle)
 					match = 1;
 		}
 		if (match == 1)
-		{
 			break;
-			return (haystack);
-		}
 	}
+	if (match == 0)
 		return ('\0');
+	return (haystack);
 }
