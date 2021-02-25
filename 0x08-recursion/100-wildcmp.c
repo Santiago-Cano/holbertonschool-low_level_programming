@@ -18,11 +18,13 @@ int wildcmp(char *s1, char *s2)
 	else
 		return (wild(s1, s2, s2));
 }
+
 /**
  * wild - process a * wildcard
  * @s1: original string
  * @s2: original second string
  * @extra: variable to check for wildcard jumps
+ * Return: 1 or 0
  */
 int wild(char *s1, char *s2, char *extra)
 {
