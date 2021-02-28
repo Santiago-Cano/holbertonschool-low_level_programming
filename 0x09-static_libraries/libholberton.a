@@ -26,7 +26,9 @@ char *_strstr(char *haystack, char *needle);
 
 #endif
 
-hello.c/        0           0     0     644     956       `
+hello.c/        0           0     0     644     980       `
+#include "holberton.h"
+
 int _putchar(char c)
 {
 	return (0);
