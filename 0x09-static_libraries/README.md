@@ -1,0 +1,1 @@
+This is my 0x08-static_libraries project folder.
