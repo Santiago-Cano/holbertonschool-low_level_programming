@@ -8,6 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
+	int coins, currency = atoi(argv[1]);
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -18,8 +20,6 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	int coins, currency = atoi(argv[1]);
-
 	coins = currency / 25;
 	currency = currency % 25;
 	coins += currency / 10;
