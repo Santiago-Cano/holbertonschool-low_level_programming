@@ -12,14 +12,16 @@ int main(int argc, char *argv[])
 {
 	int sum = 0;
 	int ar = 1;
+	int check;
 
 	for (; argc > 1; argc--)
 	{
-		if (!(argv[ar][0] <= '9' && argv[ar][0] >= '0'))
-		{
-			printf("Error\n");
-			return (1);
-		}
+		for (check = 0; argv[ar][check] != '\0'; check++)
+			if (!(argv[ar][check] <= '9' && argv[ar][check] >= '0'))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		sum += atoi(argv[ar]);
 		ar++;
 	}
