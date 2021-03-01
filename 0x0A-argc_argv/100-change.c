@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int coins, currency = atoi(argv[1]);
+	int coins, currency;
 
 	if (argc != 2)
 	{
@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
+	currency = atoi(argv[1]);
 	coins = currency / 25;
 	currency = currency % 25;
 	coins += currency / 10;
