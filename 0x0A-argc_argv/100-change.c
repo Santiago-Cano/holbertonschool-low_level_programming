@@ -1,30 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+
 /**
- * main - return minimum number of coins to make change
- * @argc: number of arguments
- * @argv: array with arguments
- * Return: 0
+ * coins - calculate number of coins needed and print them
+ * @currency: value of currency argument
  */
 
-int main(int argc, char *argv[])
-{
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else if (atoi(argv[1]) <= 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-	int currency = atoi(argv[1]);
-
-	coins(currency);
-	return (0);
-}
 void coins(int currency)
 {
 	int coin = 0;
@@ -58,4 +39,28 @@ void coins(int currency)
 		}
 	}
 	printf("%d\n", coin);
+}
+/**
+ * main - return minimum number of coins to make change
+ * @argc: number of arguments
+ * @argv: array with arguments
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
+{
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else if (atoi(argv[1]) <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	int currency = atoi(argv[1]);
+
+	coins(currency);
+	return (0);
 }
