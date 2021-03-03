@@ -8,7 +8,7 @@
  * Return: NULL on failure or invalid input, otherwise a
  *
  */
-/*  Hello You*/
+/* Hello You*/
 char **strtow(char *str)
 {
 	char **a;
@@ -18,25 +18,16 @@ char **strtow(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	for (length = 0; str[length] != '\0'; length++) /*get number of words*/
-	{
-		if (str[length] == ' ' && length != 0)
-			words++;
-		if (str[length] == ' ')
-			while (str[length] == ' ')
-				length++;
-		else
-			length++;
-	}
-	a = malloc(sizeof(char) * words);
+	words = numwords(str);
+	a = (char **)malloc(sizeof(char) * words); /*set first dimension*/
 	if (a == NULL)
 		return (NULL);
 	words = 0;
-	for (length = 0; str[length] != '\0'; length++)
+	for (length = 0; str[length] != '\0'; length++) /*set second dimension*/
 	{
 		if (str[length] == ' ' && length != 0)
 		{
-			a[words] = malloc(sizeof(char) * letter + 1);
+			a[words] = (char *)malloc(sizeof(char) * letter + 1);
 			if (a[words] == NULL)
 			{
 				for (fre = 0; fre < words; fre++)
@@ -56,7 +47,7 @@ char **strtow(char *str)
 			length++;
 	}
 	words = 0;
-	for (length = 0; str[length] != '\0'; length++)
+	for (length = 0; str[length] != '\0'; length++) /*set values of array*/
 	{
 		if (str[length] == ' ' && length != 0)
 		{
@@ -76,4 +67,27 @@ char **strtow(char *str)
 			length++;
 	}
 	return (a);
+}
+
+/**
+ * numwords - fetch number of words on string
+ * @str: string
+ * Return: number of words
+ */
+int numwords(*str)
+{
+	int words = 0;
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++) /*get number of words*/
+	{
+		if (str[i] == ' ' && i != 0)
+			words++;
+		if (str[i] == ' ')
+			while (str[i] == ' ')
+				i++;
+		else
+			i++;
+	}
+	return (words);
 }
