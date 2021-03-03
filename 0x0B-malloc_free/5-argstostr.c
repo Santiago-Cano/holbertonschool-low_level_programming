@@ -13,10 +13,9 @@ char *argstostr(int ac, char **av)
 {
 	int argument, letter;
 	int length = 0;
-	int maxlength = 0;
 	char *a;
 
-	if (ac == 0)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (argument = 0; argument < ac; argument++)
 	{
@@ -30,10 +29,8 @@ char *argstostr(int ac, char **av)
 		for (letter = 0; av[argument][letter] != '\0'; letter++)
 			length++;
 	}
-	maxlength = length;
+	a = malloc(sizeof(char) * length);
 	length = 0;
-	a = malloc(sizeof(char) * maxlength);
-
 	for (argument = 0; argument < ac; argument++)
 	{
 		for (letter = 0; av[argument][letter] != '\0'; letter++)
@@ -41,7 +38,7 @@ char *argstostr(int ac, char **av)
 			a[length] = av[argument][letter];
 			length++;
 		}
-		a[length] = '\n';
+		a[length] = '\n'; /* print newline after every argument */
 		length++;
 	}
 	return (a);
