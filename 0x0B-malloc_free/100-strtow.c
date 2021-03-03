@@ -25,7 +25,7 @@ char *letters(char *str, int words)
 		else
 			letter++;
 		if (str[i] == ' ')
-			while (str[i] == ' ')
+			while (str[i] == ' ' && str[i] != '\0')
 				i++;
 		else
 			i++;
@@ -47,7 +47,7 @@ int numwords(char *str)
 		if (str[i] == ' ' && i != 0)
 			words++;
 		if (str[i] == ' ')
-			while (str[i] == ' ')
+			while (str[i] == ' ' && str[i] != '\0')
 				i++;
 		else
 			i++;
@@ -58,43 +58,40 @@ int numwords(char *str)
  * strtow - split a string into an array of words
  * @str: string
  * Return: NULL on failure or invalid input, otherwise a
- *
  */
 char **strtow(char *str)
 {
 	char **a;
 	char *i;
-	int length, count;
+	int count, j;
 	int letter = 0;
 	int words = 1;
 
 	if (str == NULL)
 		return (NULL);
+	for (count = 0; str[count] != '\0'; count++);
 	words = numwords(str);
 	a = (char **)malloc(sizeof(char) * words); /*set first dimension*/
 	if (a == NULL)
 		return (NULL);
 	i = letters(str, words);
-	for (count = 0; count < words; count++)
-		a[count] = (char *)malloc(sizeof(char) * i[count]);
-	for (length = 0; str[length] != '\0'; length++) /*set values of array*/
+	for (j = 0; j < words; j++) /*set second dimension*/
+		a[count] = (char *)malloc(sizeof(char) * i[j] + 1);
+	for (j = 0; j < count; j++) /*set values of array*/
 	{
-		if (str[length] == ' ' && length != 0)
+		if (str[j] == ' ' && j != 0)
 		{
 			a[words][letter] = '\n';
 			letter = 0;
 			words++;
 		}
 		else
-		{
-			a[words][letter] = str[length];
-			letter++;
-		}
-		if (str[length] == ' ')
-			while (str[length] == ' ')
-				length++;
+			a[words][letter] = str[j];
+		if (str[j] == ' ')
+			while (str[j] == ' ' && j < count)
+				j++;
 		else
-			length++;
+			j++;
 	}
 	return (a);
 }
