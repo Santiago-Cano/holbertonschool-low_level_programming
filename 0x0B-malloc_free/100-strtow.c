@@ -8,13 +8,13 @@
  * @words: number of words
  * Return: array with number of letters per word
  */
-char *letters(char *str, int words)
+char *letters(char *str, int words, int length)
 {
 	char *l[words];
 	int i, letter = 0;
 
 	words = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (str[i] == ' ' && i != 0)
 		{
@@ -25,7 +25,7 @@ char *letters(char *str, int words)
 		else
 			letter++;
 		if (str[i] == ' ')
-			while (str[i] == ' ' && str[i] != '\0')
+			while (str[i] == ' ' && i < length)
 				i++;
 		else
 			i++;
@@ -37,17 +37,17 @@ char *letters(char *str, int words)
  * @str: string
  * Return: number of words
  */
-int numwords(char *str)
+int numwords(char *str, int length)
 {
 	int words = 0;
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++) /*get number of words*/
+	for (i = 0; i < length; i++) /*get number of words*/
 	{
 		if (str[i] == ' ' && i != 0)
 			words++;
 		if (str[i] == ' ')
-			while (str[i] == ' ' && str[i] != '\0')
+			while (str[i] == ' ' && i < length)
 				i++;
 		else
 			i++;
@@ -70,11 +70,11 @@ char **strtow(char *str)
 	if (str == NULL)
 		return (NULL);
 	for (count = 0; str[count] != '\0'; count++);
-	words = numwords(str);
+	words = numwords(str, count);
 	a = (char **)malloc(sizeof(char) * words); /*set first dimension*/
 	if (a == NULL)
 		return (NULL);
-	i = letters(str, words);
+	i = letters(str, words, count);
 	for (j = 0; j < words; j++) /*set second dimension*/
 		a[count] = (char *)malloc(sizeof(char) * i[j] + 1);
 	for (j = 0; j < count; j++) /*set values of array*/
