@@ -19,8 +19,7 @@ char *letters(char *str, int words, int length)
 		if (str[i] == ' ' && i != 0)
 		{
 			*l[words] = letter;
-			letter = 0;
-			words++;
+			words++, letter = 0;
 		}
 		else
 			letter++;
@@ -71,7 +70,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (count = 0; str[count] != '\0'; count++);
 	words = numwords(str, count);
-	a = (char **)malloc(sizeof(char) * words); /*set first dimension*/
+	a = (char **)malloc(sizeof(char) * words + 1); /*set first dimension*/
 	if (a == NULL)
 		return (NULL);
 	i = letters(str, words, count);
@@ -82,8 +81,7 @@ char **strtow(char *str)
 		if (str[j] == ' ' && j != 0)
 		{
 			a[words][letter] = '\n';
-			letter = 0;
-			words++;
+			words++, letter = 0;
 		}
 		else
 			a[words][letter] = str[j];
