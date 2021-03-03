@@ -12,32 +12,68 @@
 char **strtow(char *str)
 {
 	char **a;
-	int length;
+	int length, fre;
 	int letter = 0;
 	int words = 1;
-	int space = 0;
 
-	if (str == NULL || str == "")
+	if (str == NULL)
 		return (NULL);
-	for (length = 0; *str != '\0'; str++)
+	for (length = 0; str[length] != '\0'; length++) /*get number of words*/
 	{
-		if (*str == ' ' && length != 0)
+		if (str[length] == ' ' && length != 0)
 			words++;
-		while (*str == ' ')
-		{
-			str++;
-			space++;
-		}
-		length++;
+		if (str[length] == ' ')
+			while (str[length] == ' ')
+				length++;
+		else
+			length++;
 	}
-	str -= (length + space);
-	a = malloc(sizeof(char) * (words));
+	a = malloc(sizeof(char) * words);
+	if (a == NULL)
+		return (NULL);
 	words = 0;
-	for (; *str != '\0'; str++)
+	for (length = 0; str[length] != '\0'; length++)
 	{
-		if (*str == ' ')
+		if (str[length] == ' ' && length != 0)
+		{
+			a[words] = malloc(sizeof(char) * letter + 1);
+			if (a[words] == NULL)
+			{
+				for (fre = 0; fre < words; fre++)
+					free(a[fre]);
+				free(a);
+				return (NULL);
+			}
+			letter = 0;
+			words++;
+		}
+		else
+			letter++;
+		if (str[length] == ' ')
+			while (str[length] == ' ')
+				length++;
+		else
+			length++;
+	}
+	words = 0;
+	for (length = 0; str[length] != '\0'; length++)
+	{
+		if (str[length] == ' ' && length != 0)
 		{
 			a[words][letter] = '\n';
-			a[words][letter]
+			letter = 0;
+			words++;
+		}
+		else
+		{
+			a[words][letter] = str[length];
+			letter++;
+		}
+		if (str[length] == ' ')
+			while (str[length] == ' ')
+				length++;
+		else
+			length++;
+	}
 	return (a);
 }
