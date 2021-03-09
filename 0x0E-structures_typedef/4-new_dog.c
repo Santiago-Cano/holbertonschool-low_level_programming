@@ -43,32 +43,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (new_dog == NULL)
 		return (NULL);
 	new_dog->age = age;
-	if (name != NULL)
+	for (length = 0; name[length] != '\0'; length++)
+		;
+	new_dog->name = _strdup(name);
+	if (new_dog->name == NULL)
 	{
-		for (length = 0; name[length] != '\0'; length++)
-			;
-		new_dog->name = _strdup(name);
-		if (new_dog->name == NULL)
-		{
-			free(new_dog);
-			return (NULL);
-		}
+		free(new_dog);
+		return (NULL);
 	}
-	else
-		new_dog->name = NULL;
-	if (owner != NULL)
+	for (length = 0; owner[length] != '\0'; length++)
+		;
+	new_dog->owner = _strdup(owner);
+	if (new_dog->owner == NULL)
 	{
-		for (length = 0; owner[length] != '\0'; length++)
-			;
-		new_dog->owner = _strdup(owner);
-		if (new_dog->owner == NULL)
-		{
-			free(new_dog->name);
-			free(new_dog);
-			return (NULL);
-		}
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
 	}
-	else
-		new_dog->owner = NULL;
 	return (new_dog);
 }
