@@ -9,7 +9,7 @@
  */
 char *_strdup(char *str)
 {
-	char *a;
+	char *a = NULL;
 	int fill, length = 0;
 
 	if (str == NULL)
@@ -36,7 +36,7 @@ char *_strdup(char *str)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newdog;
+	dog_t *newdog = NULL;
 
 	newdog = malloc(sizeof(dog_t));
 	if (newdog == NULL)
