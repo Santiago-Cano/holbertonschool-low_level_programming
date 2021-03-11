@@ -7,7 +7,7 @@
  * @s: operator
  * Return: pointer to function
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	int i = 0;
 
@@ -19,9 +19,9 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}};
 
-	while (p[i].f != NULL)
+	while (p[i].op != NULL)
 	{
-		if (s == p[i].op)
+		if (*s == *p[i].op)
 			return (p[i].f);
 		i++;
 	}
