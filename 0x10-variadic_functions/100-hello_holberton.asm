@@ -1,11 +1,16 @@
-	global  _main
-	extern  write
+	section .data
+	msg db "Hello, Holberton",10
 
 	section .text
-_main:
-	push    message
-	call    write
-	add     esp, 4
-	ret
-message:
-	    db  'Hello, Holberton', 10, 0
+	global _start
+
+_start:
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, msg
+	mov rdx, 13
+	syscall
+
+	mov rax, 60
+	mov rdi, 0
+	    syscall
