@@ -11,17 +11,19 @@ int (*get_op_func(char *s))(int, int)
 {
 	int i = 0;
 
-	op_t p[5] = {
+	op_t p[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
 		{"/", op_div},
-		{"%", op_mod}};
+		{"%", op_mod},
+		{NULL, NULL}};
 
-	while (i < 5)
+	while (p[i].f != NULL)
 	{
 		if (s == p[i].op)
 			return (p[i].f);
+		i++;
 	}
 	return (NULL);
 }

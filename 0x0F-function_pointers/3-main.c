@@ -2,6 +2,12 @@
 #include "3-calc.h"
 #include <stdlib.h>
 
+/**
+ * main - print result of operation with two numbers
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	int num1, num2, res;
