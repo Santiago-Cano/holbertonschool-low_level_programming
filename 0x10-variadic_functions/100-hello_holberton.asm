@@ -1,9 +1,9 @@
-global _start
+global _main
 	section .data
 	msg db "Hello, Holberton", 10
 
 	section .text
-_start:
+_main:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, msg
