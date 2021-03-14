@@ -9,7 +9,7 @@ void print_all(const char * const format, ...)
 {
 	int form = 0, ty;
 	va_list arg;
-	type_t type[] = {{'c', chart},
+	stname type[] = {{'c', chart},
 			 {'i', intt},
 			 {'f', floatt},
 			 {'s', stringt},

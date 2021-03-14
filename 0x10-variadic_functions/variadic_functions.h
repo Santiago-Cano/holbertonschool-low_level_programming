@@ -3,15 +3,15 @@
 #include <stdarg.h>
 
 /**
- * struct type_t - Struct
+ * struct stname - Struct
  * @formatt: format type
  * @f: pointer to function
  */
-typedef struct type_t
+typedef struct stname
 {
 	char formatt;
 	void (*f)(va_list);
-} type_t;
+} stname;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
@@ -21,5 +21,5 @@ void chart(va_list arg);
 void intt(va_list arg);
 void floatt(va_list arg);
 void stringt(va_list arg);
-
+int _putchar(char c);
 #endif
