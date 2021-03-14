@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stddef.h>
 /**
  * chart - print char
  * @arg: char to print
