@@ -61,9 +61,9 @@ void print_all(const char * const format, ...)
 	while (format != NULL && format[form] != '\0')
 	{
 		ty = 0;
-		while (type[ty].format != '\0')
+		while (type[ty].formatt != '\0')
 		{
-			if (format[form] == type[ty].format)
+			if (format[form] == type[ty].formatt)
 			{
 				type[ty].f(arg);
 				if (format[form + 1] != '\0')

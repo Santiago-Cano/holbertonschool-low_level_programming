@@ -9,7 +9,7 @@
  */
 typedef struct
 {
-	char format;
+	char formatt;
 	void (*f)(va_list);
 } type_t;
 
