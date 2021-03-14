@@ -7,7 +7,7 @@
  * @format: format type
  * @f: pointer to function
  */
-typedef struct type_t
+typedef struct
 {
 	char format;
 	void (*f)(va_list);
