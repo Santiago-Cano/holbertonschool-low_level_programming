@@ -3,11 +3,11 @@
 #include <stdarg.h>
 
 /**
- * type_t - struct
- * @format: format type
+ * struct type_t - Struct
+ * @formatt: format type
  * @f: pointer to function
  */
-typedef struct
+typedef struct type_t
 {
 	char formatt;
 	void (*f)(va_list);

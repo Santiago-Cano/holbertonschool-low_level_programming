@@ -44,7 +44,6 @@ void stringt(va_list arg)
 }
 /**
  * print_all - print anything
- * @char: string
  * @format: string format
  */
 void print_all(const char * const format, ...)
