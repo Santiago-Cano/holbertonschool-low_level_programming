@@ -2,6 +2,40 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
+ * print_all - print anything
+ * @format: string format
+ */
+void print_all(const char * const format, ...)
+{
+	int form = 0, ty;
+	va_list arg;
+	type_t type[] = {{'c', chart},
+			 {'i', intt},
+			 {'f', floatt},
+			 {'s', stringt},
+			 {'\0', '\0'}};
+
+	va_start(arg, format);
+	while (format != NULL && format[form] != '\0')
+	{
+		ty = 0;
+		while (type[ty].formatt != '\0')
+		{
+			if (format[form] == type[ty].formatt)
+			{
+				type[ty].f(arg);
+				if (format[form + 1] != '\0')
+					printf(", ");
+			}
+			ty++;
+		}
+		form++;
+	}
+	va_end(arg);
+	printf("\n");
+}
+
+/**
  * chart - print char
  * @arg: char to print
  */
@@ -40,37 +74,4 @@ void stringt(va_list arg)
 		return;
 	}
 	printf("%s", check);
-}
-/**
- * print_all - print anything
- * @format: string format
- */
-void print_all(const char * const format, ...)
-{
-	int form = 0, ty;
-	va_list arg;
-	type_t type[] = {{'c', chart},
-			 {'i', intt},
-			 {'f', floatt},
-			 {'s', stringt},
-			 {'\0', '\0'}};
-
-	va_start(arg, format);
-	while (format != NULL && format[form] != '\0')
-	{
-		ty = 0;
-		while (type[ty].formatt != '\0')
-		{
-			if (format[form] == type[ty].formatt)
-			{
-				type[ty].f(arg);
-				if (format[form + 1] != '\0')
-					printf(", ");
-			}
-			ty++;
-		}
-		form++;
-	}
-	va_end(arg);
-	printf("\n");
 }
