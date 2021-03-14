@@ -8,6 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	int form = 0, ty;
+	char *s = "";
 	va_list arg;
 	stname type[] = {{'c', chart},
 			 {'i', intt},
@@ -23,9 +24,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[form] == type[ty].formatt)
 			{
+				printf("%s", s);
 				type[ty].f(arg);
-				if (format[form + 1] != '\0')
-					printf(", ");
+				s = ", ";
 			}
 			ty++;
 		}
