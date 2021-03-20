@@ -6,7 +6,7 @@
  * add_node_end - add a new node at the tail of list_t
  * @head: start of list_t
  * @str: string to be duplicated
- *
+ * Return: new node
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
