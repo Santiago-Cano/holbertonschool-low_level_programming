@@ -3,8 +3,7 @@
 /**
  * delete_nodeint_at_index - delete nth node of linked list
  * @head: head of linked list
- * @idx: node to get
- * @n: value to assign to node
+ * @index: node to get
  * Return: 1 on success, -1 on fail
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
