@@ -29,11 +29,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	vwrite = write(1, buf, vread);
-	close(fd);
 	if (vwrite == -1)
 	{
 		free(buf);
+		close(fd);
 		return (0);
 	}
+	close(fd);
 	return (vread);
 }
